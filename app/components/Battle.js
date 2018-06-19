@@ -50,7 +50,7 @@ class PlayerInput extends React.Component {
                     className='button'
                     type='submit'
                     disabled={!this.state.username}>
-                    submit
+                    Lock in
                 </button>
             </form>
         )
@@ -118,7 +118,7 @@ class Battle extends React.Component {
                             <button
                             className='reset'
                             onClick={this.handleReset.bind(null, 'playerOne')}>
-                                Reset
+                                Switch Player
                         </button>
                         </PlayerPreview>}
                     {!playerTwoName &&
@@ -136,7 +136,7 @@ class Battle extends React.Component {
                             <button
                             className='reset'
                             onClick={this.handleReset.bind(null, 'playerTwo')}>
-                                Reset
+                                Switch Player
                             </button>
                         </PlayerPreview>}
                 </div>

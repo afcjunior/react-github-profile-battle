@@ -1,5 +1,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    background-color: #CCCCFF;
 }
 
 .container {
@@ -57,7 +58,12 @@ li{
 
 .nav {
     display: flex;
-    color: orangered;
+    color: orangered !important;
+    text-decoration: none;
+}
+
+.nav a{
+    color: orangered !important;
     text-decoration: none;
 }
 .home-container {
@@ -91,7 +97,8 @@ li{
 }
 
 .button:hover:enabled {
-    background: linear-gradient(#1a1a1a, #0a0a0a);
+    cursor: pointer;
+    background: linear-gradient(#5e5e5e, #0a0a0a);
     color: #fff;
     text-decoration: none;
 }
@@ -143,9 +150,10 @@ li{
 }
 
 .reset {
+    font-size: 15px;
     border: none;
     background: transparent;
-    color: #d0021b;
+    color: orangered;
     display: block;
     width: 100%;
     text-align: center;
@@ -153,4 +161,5 @@ li{
 
 .reset:hover{
     cursor: pointer;
+    text-decoration: underline;
 }

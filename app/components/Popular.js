@@ -11,7 +11,7 @@ function SelectLanguage (props){
             {languages.map((lang)=>{
                 return(
                     <li
-                        style={lang === props.selectedLanguage ? {color: '#d0021b'} : null}
+                        style={lang === props.selectedLanguage ? {color: 'orangered'} : null}
                         onClick={props.onSelect.bind(null, lang)}
                         key={lang}>
                         {lang}
@@ -100,7 +100,7 @@ class Popular extends React.Component {
                 {!this.state.repos
                  ? <Loading
                     text='Fetching'
-                    speed='150'
+                    speed={150}
                     />
                  : <RepoGrid repos={this.state.repos}/>}
             </div>

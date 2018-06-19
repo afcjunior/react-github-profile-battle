@@ -10,13 +10,13 @@ function Nav (){
                 </NavLink>
             </li>
             <li>
-                <NavLink activeClassName='active' to='/battle'>
-                    Battle
+                <NavLink activeClassName='active' to='/Popular'>
+                    Popular
                 </NavLink>
             </li>
             <li>
-                <NavLink activeClassName='active' to='/Popular'>
-                    Popular
+                <NavLink activeClassName='active' to='/battle'>
+                    Battle
                 </NavLink>
             </li>
 
