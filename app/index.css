@@ -1,0 +1,156 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+.languages {
+    display: flex;
+    justify-content: center;
+}
+
+.languages li {
+    margin: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.popular-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.space-list-items{
+    margin-bottom: 7px;
+}
+
+.popular-rank{
+    font-size: 20px;
+    margin: 10px;
+}
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.nav {
+    display: flex;
+    color: orangered;
+    text-decoration: none;
+}
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.active {
+    font-weight: bold;
+}
+
+.nav li {
+    margin-right: 15px;
+}
+
+.button {
+    color: #e6e6e6;
+    background: #0a0a0a;
+    border: none;
+    font-size: 16px;
+    border-radius:  3px;
+    width: 200px;
+    text-align: center;
+    display: block;
+    padding: 7px 0;
+    margin: 10px auto;
+    -webkit-border-radius:  3px;
+    -moz-border-radius:  3px;
+    -ms-border-radius:  3px;
+    -o-border-radius:  3px;
+}
+
+.button:hover:enabled {
+    background: linear-gradient(#1a1a1a, #0a0a0a);
+    color: #fff;
+    text-decoration: none;
+}
+
+.button:active {
+    transform: translateY(1px);
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    -o-transform: translateY(1px);
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.column {
+    display:flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+
+}
+
+.column input {
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0, 0.43);
+    font-size: 16px;
+    width:  80%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.column label {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.header {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.reset {
+    border: none;
+    background: transparent;
+    color: #d0021b;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.reset:hover{
+    cursor: pointer;
+}
