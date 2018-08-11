@@ -1,38 +1,41 @@
 {
   "name": "github-battle",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project for React Training's fundamental course.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "NODE_ENV='production' webpack -p"
+    "build": "NODE_ENV='production' webpack -p",
+    "firebase-init": "firebase login && firebase init",
+    "deploy": "npm run build && firebase deploy",
+    "firebase-use-add": "firebase use --add"
   },
+  "author": "Adalberto C Jr.",
+  "license": "MIT",
   "babel": {
     "presets": [
       "env",
       "react"
     ]
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "prop-types": "^15.6.1",
-    "query-string": "^6.1.0",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-router-dom": "^4.3.1"
-  },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.1",
-    "webpack-dev-server": "^3.1.4"
+    "css-loader": "^0.27.3",
+    "firebase-tools": "^3.19.3",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.16.0",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.11.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.0",
+    "babel-polyfill": "^6.26.0",
+    "prop-types": "^15.5.4",
+    "react": "^16.0.0-alpha.5",
+    "react-dom": "^16.0.0-alpha.5",
+    "react-router-dom": "^4.0.0"
   }
 }
