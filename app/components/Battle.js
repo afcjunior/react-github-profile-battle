@@ -2,45 +2,46 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import PlayerPreview from './PlayerPreview'
-
-
-
-
 class PlayerInput extends React.Component {
     static propTypes = {
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
+        firstFocus: PropTypes.bool.isRequired,
         onSubmit: PropTypes.func.isRequired
     }
 
     static defaultProps = {
-        label: 'Username'
+        label: 'Username',
+        firstFocus: false
     }
     state = {
         username: ''
     }
 
-    handleChange = (event) => {
-        //events in js are weird. u cant put the next line inside the object. it only works like this.
+    handleChange = event => {
+        //events in js are weird. u cant put the next line inside the object in setstate. it only works like this.
         const value = event.target.value
         this.setState(()=>({username: value}))
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = event => {
         event.preventDefault();
         this.props.onSubmit(
             this.props.id,
             this.state.username
         )
     }
+
+
     render () {
         const { username } = this.state
-        const { label } = this.props
+        const { label, firstFocus } = this.props
         return (
             <form className='column' onSubmit={this.handleSubmit}>
                 <label className='header' htmlFor='username'>{label}</label>
                 <input
-                    id='username'
+                    ref={firstFocus===true ? input => input && input.focus() : null }
+                    id={label}
                     placeholder='github username'
                     type='text'
                     autoComplete='off'
@@ -58,8 +59,6 @@ class PlayerInput extends React.Component {
         )
     }
 }
-
-
 class Battle extends React.Component {
     state = {
         playerOneName: '',
@@ -94,6 +93,7 @@ class Battle extends React.Component {
                         <PlayerInput
                             id='playerOne'
                             label='Player One'
+                            firstFocus={true}
                             onSubmit={this.handleSubmit}
                         />
                     }

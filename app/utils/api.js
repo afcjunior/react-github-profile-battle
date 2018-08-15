@@ -9,7 +9,7 @@ async function getProfile (username) {
 }
 
 async function getRepos (username) {
-  const response = await fetch (`https://api.github.com/users/${username}/repos${params}&per_page=100`)
+  const response = await fetch(`https://api.github.com/users/${username}/repos${params}&per_page=100`)
   return response.json()
 }
 
@@ -53,6 +53,7 @@ export async function fetchPopularRepos (language){
   const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`)
   const response = await fetch(encodedURI)
     .catch(handleError)
+
   const repos = await response.json()
   return repos.items
 }

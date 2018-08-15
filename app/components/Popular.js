@@ -5,7 +5,6 @@ import Loading from './Loading'
 
 function SelectLanguage ({selectedLanguage, onSelect}){
     const languages = ['All','JavaScript','Ruby','CSS','Python']
-
     return(
         <ul className='languages'>
             {languages.map((lang)=>(
@@ -58,23 +57,20 @@ class Popular extends React.Component {
         selectedLanguage: 'All',
         repos: null
     }
-
     componentDidMount() {
         this.updateLanguage(this.state.selectedLanguage);
     }
-
     updateLanguage = async (lang) => {
         this.setState(()=>({
                 selectedLanguage: lang,
                 repos: null
             }
         ))
-        repos = await fetchPopularRepos(lang)
+        const repos = await fetchPopularRepos(lang)
         this.setState(() => ({repos}))
     }
 
     render(){
-
         const {selectedLanguage, repos} = this.state
         return(
             <div>
