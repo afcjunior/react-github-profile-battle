@@ -30,6 +30,8 @@ class PlayerInput extends React.Component {
             this.props.id,
             this.state.username
         )
+        document.getElementById('Player Two').focus()
+
     }
 
 
