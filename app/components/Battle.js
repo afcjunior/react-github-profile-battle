@@ -2,65 +2,56 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import PlayerPreview from './PlayerPreview'
-class PlayerInput extends React.Component {
-    static propTypes = {
-        id: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
-        firstFocus: PropTypes.bool.isRequired,
-        onSubmit: PropTypes.func.isRequired
+
+const PlayerInput = ({ id, label, firstFocus, onSubmit }) => {
+    const [userName, setUserName] = useState('')
+
+    const handleChange = event => {
+        const { value } = event.target
+        setUserName(value)
     }
 
-    static defaultProps = {
-        label: 'Username',
-        firstFocus: false
-    }
-    state = {
-        username: ''
-    }
-
-    handleChange = event => {
-        //events in js are weird. u cant put the next line inside the object in setstate. it only works like this.
-        const value = event.target.value
-        this.setState(()=>({username: value}))
-    }
-
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.onSubmit(
-            this.props.id,
-            this.state.username
-        )
+    const handleSubmit = event => {
+        event.preventDefault()
+        onSubmit(id, userName)
         document.getElementById('Player Two').focus()
-
     }
 
+    return (
+        <form className='column' onSubmit={handleSubmit}>
+            <label className='header' htmlFor='username'>{label}</label>
+            <input
+                ref={!!firstFocus ? input => input && input.focus() : null }
+                id={label}
+                placeholder='github username'
+                type='text'
+                autoComplete='off'
+                value={userName}
+                onChange={handleChange}
+            />
 
-    render () {
-        const { username } = this.state
-        const { label, firstFocus } = this.props
-        return (
-            <form className='column' onSubmit={this.handleSubmit}>
-                <label className='header' htmlFor='username'>{label}</label>
-                <input
-                    ref={firstFocus===true ? input => input && input.focus() : null }
-                    id={label}
-                    placeholder='github username'
-                    type='text'
-                    autoComplete='off'
-                    value={username}
-                    onChange={this.handleChange}
-                />
-
-                <button
-                    className='button'
-                    type='submit'
-                    disabled={!username}>
-                    Lock in
-                </button>
-            </form>
-        )
-    }
+            <button
+                className='button'
+                type='submit'
+                disabled={!userName}>
+                Lock in
+            </button>
+        </form>
+    )
 }
+
+PlayerInput.propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    firstFocus: PropTypes.bool.isRequired,
+    onSubmit: PropTypes.func.isRequired
+}
+
+PlayerInput.defaultProps = {
+    label: 'Username',
+    firstFocus: false
+}
+
 class Battle extends React.Component {
     state = {
         playerOneName: '',
